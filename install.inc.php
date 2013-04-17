@@ -14,7 +14,7 @@ $start_dir = $REX['MEDIAFOLDER'] . '/addons';
       $error = 'Verzeichnis konnte nicht erstellt werden';
     }
   }
-  else (!is_dir($start_dir))
+  else
   {
     if(!mkdir($start_dir) || !mkdir($dest_dir))
     {
