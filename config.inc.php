@@ -14,8 +14,8 @@ $REX['ADDON']['author'][$mypage] = 'Tim Filler';
 
 // AUTO INCLUDE FUNCTIONS & CLASSES
 ////////////////////////////////////////////////////////////////////////////////
-if ($REX['REDAXO'])
-{
+//if ($REX['REDAXO'])
+//{
   $pattern = $myroot.'functions/function.*.inc.php';
   $include_files = glob($pattern);
   if(is_array($include_files) && count($include_files) > 0){
@@ -35,6 +35,6 @@ if ($REX['REDAXO'])
      }
   }
   
-}
+//}
 
 ?>
