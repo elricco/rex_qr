@@ -1,0 +1,16 @@
+<?php
+
+$qrcode = new rex_qr;
+$qrcode->artId = REX_ARTICLE_ID;
+$qrcode->artLang = $REX['CUR_CLANG'];
+$qrcode->getCode();
+
+if($REX['REDAXO'])
+{
+echo '<img src="../files/addons/rex_qr/rex_qr-REX_ARTICLE_ID-REX_CLANG_ID.png" width="250" height="250" />';
+}
+else
+{
+echo '<img src="./files/addons/rex_qr/rex_qr-REX_ARTICLE_ID-REX_CLANG_ID.png" width="250" height="250" />';
+}
+?>
