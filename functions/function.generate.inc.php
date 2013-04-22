@@ -33,14 +33,20 @@ if(!function_exists("generateBackendCode")) {
 		if($REX['REDAXO'])
 		{
 			$message .= '<div class="rex-form-row">';
-			$message .= '<img src="../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png" width="50" height="50" />';
-			$message .= '</div>';
-			$message .= '<div class="rex-form-row">';
+			$message .= '	<table>';
+			$message .= '		<tr>';
+			$message .= '			<td width="145"> </td>';
+			$message .= '			<td width="100">';
+			$message .= '				<img src="../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png" width="50" height="50" />';
+			$message .= '			</td>';
+			$message .= '			<td>';
+			//$message .= '</div>';
+			//$message .= '<div class="rex-form-row">';
 			$message .= '	<p class="rex-form-col-a rex-form-submit">';
-			$message .= '   <label>'.print_r($artName).'</label>';
-			//$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="location.href=\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\';">';
-			$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="newWindow(\'QR Code '.$artName.'\',\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\',\'550\',\'550\’,\’content\');return false;">';
+			$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="location.href=\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\';">';
+			//$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="newWindow(\'QR Code '.$artName.'\',\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\',\'550\',\'550\',\'content\');return false;">';
 			$message .= '	</p>';
+			$message .= '</td></tr></table>';
 			$message .= '</div>';
 		}
 
