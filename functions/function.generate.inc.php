@@ -18,18 +18,24 @@ rex_register_extension('ART_META_FORM', 'generateBackendCode');
 if(!function_exists("generateBackendCode")) {
 	function generateBackendCode($params) {
 		global $REX;
-
+		
+		//Get params
 		$message = $params['subject'];
 		$articleID = (int) $params['id'];
 		$clangID = (int) $params['clang'];
 		$artName = $params['name'];
 		$article = $params['article'];
-
-		$qrcode = new rex_qr;
-		$qrcode->artId = $articleID;
-		$qrcode->artLang = $clangID;
-		$qrcode->getCode();
-
+		
+		//Check if file exists
+		if(!file_exists('../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png'))
+		{
+			$qrcode = new rex_qr;
+			$qrcode->artId = $articleID;
+			$qrcode->artLang = $clangID;
+			$qrcode->getCode();
+		}
+		
+		//Output backend integration
 		if($REX['REDAXO'])
 		{
 			$message .= '<div class="rex-form-row">';
