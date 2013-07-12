@@ -1,5 +1,6 @@
 <?php
-echo '<strong>Modulausgabe</strong><br /><br />';
+	echo '<div class="rex-addon-output">'."\n";
+	echo '  <h2 class="rex-hl2">Einstellungen</h2>'."\n";
 if(OOAddon::isAvailable("textile"))
 {
   if(file_get_contents($REX['INCLUDE_PATH'].'/addons/rex_qr/modul_output.txt'))
@@ -17,4 +18,5 @@ else
 {
   echo rex_warning('Dieses Modul ben&ouml;tigt das "textile" Addon!');
 }
+  echo '</div>'."\n";
 ?>

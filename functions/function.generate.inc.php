@@ -7,7 +7,7 @@ if(!function_exists("rex_qr_getCode")) {
     $mypage = "rex_qr";
     $encodedUrl = utf8_encode(rex_getUrl($artId,$artlang));
     $contents= file_get_contents('http://chart.apis.google.com/chart?chs=500x500&cht=qr&chl='.$encodedUrl);
-	$savefile = fopen($REX['MEDIAFOLDER']."/addons/".$mypage."/codes/rex_qr_".$artId."_".$artLang.".png", "w");
+	  $savefile = fopen($REX['MEDIAFOLDER']."/addons/".$mypage."/codes/rex_qr_".$artId."_".$artLang.".png", "w");
     fwrite($savefile, $contents);
     fclose($savefile);
   }
@@ -50,6 +50,7 @@ if(!function_exists("generateBackendCode")) {
 			//$message .= '<div class="rex-form-row">';
 			$message .= '	<p class="rex-form-col-a rex-form-submit">';
 			$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="location.href=\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\';">';
+			$message .= '		<input class="rex-form-submit" type="button" value="QR-Code neu generieren" target="_blank" onclick="location.href=\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\';">';
 			//$message .= '		<input class="rex-form-submit" type="button" value="QR-Code herunterladen" target="_blank" onclick="newWindow(\'QR Code '.$artName.'\',\'../files/addons/rex_qr/rex_qr-'.$articleID.'-'.$clangID.'.png\',\'550\',\'550\',\'content\');return false;">';
 			$message .= '	</p>';
 			$message .= '</td></tr></table>';
