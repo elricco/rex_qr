@@ -10,11 +10,11 @@ include $REX['INCLUDE_PATH'].'/layout/top.php';
 
 // Submenue erzeugen
 $subpages = array(
-	array('start',"Erkl&auml;rung"),
-	array('settings',"Einstellungen")
+	array('start',$I18N->msg('rex_qr_menu_info')),
+	array('settings',$I18N->msg('rex_qr_menu_settings'))
 );
 
-rex_title("QR Code Genrator", $subpages);
+rex_title($I18N->msg('rex_qr_title'), $subpages);
 
 // Laden der jeweiligen Menueseite
 switch($subpage) {

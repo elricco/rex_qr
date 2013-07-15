@@ -1,0 +1,55 @@
+﻿# Addon: REX QR
+#---------------
+
+# Addon-Eintrag und Addon-Titel
+rex_qr_menu_link = QR-Generator
+rex_qr_title = QuickResponse Generator <span style="font-size:10px;">(Version 0.1.1)</span>
+
+# Versionen
+rex_qr_version = 0.1.1
+rex_qr_tiny_versinfo =  PHP QR Code 1.1.4, <a href="http://phpqrcode.sourceforge.net/" onclick="window.open(this.href); return false;">http://phpqrcode.sourceforge.net/</a>
+
+# Menüeinträge
+rex_qr_menu_info = Erklärung
+rex_qr_menu_settings = Konfiguration
+
+# Konfiguration
+rex_qr_config_title = Konfiguration
+rex_qr_google_chart_api = Google Chart API
+rex_qr_google_chart_label = Gr&ouml;&szlig;e<br />(in Pixel, maximal 500)
+rex_qr_config_btn_save = Speichern
+rex_qr_config_empty_cache = Cache leeren
+
+# Artikel-Meldungen
+rex_qr_generated_success = Der QR-Code wurde neu generiert.
+rex_qr_generated_failed = Beim generieren des QR-Code trat ein Fehler auf!
+
+# CSS-Verwaltung
+rex_qr_css_title = CSS für rex_qr
+rex_qr_css_text = CSS für Editor und Vorschau
+rex_qr_css_infotitle = Hinweis
+rex_qr_css_info = Die hier angegebenen CSS-Anweisungen können bei der Konfiguration über folgenden Parameter eingefügt werden:<br /><strong>content_css : 'index.php?rex_qrcss=true'</strong><br /><br />Die Darstellung des rex_qr-Editors und der rex_qr-Vorschau können dadurch beeinflusst werden. Weitere Informationen finden sich in der rex_qr-Dokumentation.<br /><br /><strong>F&uuml;r das Frontend müssen die entsprechenden CSS-Einträge in das eigene Frontend-CSS übernommen werden!</strong>
+
+# Fehler und Info-Meldungen
+rex_qr_error_notwriteable = Konfigurationsdatei "{0}" ist nicht beschreibbar!
+rex_qr_config_saved = Konfiguration wurde aktualisiert!
+rex_qr_config_not_saved = Konfiguration konnte nicht gespeichert werden!
+rex_qr_profile_deleted = Editor-Profil wurde gelöscht!
+rex_qr_profile_notdeleted = Editor-Profil mit ID=2 (default) darf nicht gelöscht werden!
+rex_qr_profiles_nodata = Keine Editor-Profile vorhanden!
+rex_qr_profiles_noname = Kein Name angegeben!
+rex_qr_profiles_nameinvalid = Name enthält ungültige Zeichen (nur a-z und 0-9 erlaubt)!
+rex_qr_profiles_nodesc = Keine Beschreibung angegeben!
+rex_qr_profiles_noconfig = Keine rex_qr-Konfiguration angegeben!
+rex_qr_cache_delete_successful = Cache wurde geleert!
+rex_qr_cache_delete_failed = Cache konnte nicht geleert werden!
+
+# Erklärung / Hilfe / Module
+rex_qr_shorthelp = Das Addon bindet den WYSIWYG-Editor rex_qr im Backend und bei Bedarf auch im Frontend ein.
+rex_qr_longhelp = <br />Abhängig von der <a href="index.php?page=rex_qr&amp;subpage=settings">Konfiguration</a> des rex_qr-Addons wird automatisch im Backend und im Frontend<br />der rex_qr-WYSIWYG-Editor für Textareas eingebunden.<br /><br />Textareas mit der Klasse <em>rex_qrEditor</em> werden automatisch von einem normalen Texteingabefeld<br />in einen WYSIWYG-Editor umgewandelt.<br />z.B.: &lt;textarea <strong>class="rex_qrEditor"</strong>&gt;&lt;/textarea&gt;<br /><br />Im Backend können verschiedene <a href="index.php?page=rex_qr&amp;subpage=profiles">Editor-Profile</a> mit unterschiedlichen Konfigurationseinstellungen für den rex_qr-Editor angelegt werden. Diese Editor-Profile können durch anhängen des Profil-Namens an die Klasse angewendet werden.<br />z.B.: &lt;textarea <strong>class="rex_qrEditor-simple"</strong>&gt;&lt;/textarea&gt;
+rex_qr_nodel_notice = <strong>HINWEIS:</strong><br />Der Eintrag mit der <strong>ID=2</strong> und Name <strong>default</strong> darf nicht gelöscht werden!
+
+rex_qr_title_module_input = Code-Beispiel für Moduleingabe
+rex_qr_help_module_input = Um eine Textarea in einen WYSIWYG-Editor mit rex_qr zu verwandeln reicht es der Textarea die Klasse <strong>rex_qrEditor</strong> zuzuweisen.<br />Durch anhängen eines bestehenden <a href="index.php?page=rex_qr&amp;subpage=profiles">Editor-Profil-Namens</a> an die Klasse kann der rex_qr für jede Textarea individuell angepasst werden.<br />z.B.: &lt;textarea <strong>class="rex_qrEditor-simple"</strong>&gt;&lt;/textarea&gt;
+rex_qr_title_module_output = Code-Beispiel für Modulausgabe
+rex_qr_help_module_output = Für die Ausgabe ist es ausreichend im Output-Modul die Variable <strong>REX_HTML_VALUE[1]</strong> anzugeben.<br />Hier ein Beispiel mit einer IF-Abfrage um eine leere Ausgabe zu vermeiden.

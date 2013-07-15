@@ -1,19 +1,4 @@
 <?php
-
-function rex_deleteQRcache ($file)
-{
-  $dir = dirname('/files/addons/rex_qr');
-  echo "<p>Full path to this dir: " . $dir . "</p>";
-  echo "<p>Full path to a .htpasswd file in this dir: " . $dir . "/.htpasswd" . "</p>";
-}
-
-function rex_deleteQRfile ($file)
-{
-  $dir = dirname('/files/addons/rex_qr/'.$file);
-  echo "<p>Full path to this dir: " . $dir . "</p>";
-  echo "<p>Full path to a .htpasswd file in this dir: " . $dir . "/.htpasswd" . "</p>";
-}
-
 /**
  * Lˆscht einen Ordner/Datei mit Unterordnern
  *
@@ -22,7 +7,8 @@ function rex_deleteQRfile ($file)
  * 
  * @return TRUE bei Erfolg, sonst FALSE
  */
-function rex_deleteDir($file, $delete_folders = FALSE)
+if(!function_exists("rex_deleteQRDir")) {
+function rex_deleteQRDir($file, $delete_folders = FALSE)
 {
   $debug = FALSE;
   $state = TRUE;
@@ -50,7 +36,7 @@ function rex_deleteDir($file, $delete_folders = FALSE)
           continue;
         }
 
-        if (!rex_deleteDir($file.DIRECTORY_SEPARATOR.$filename, $delete_folders))
+        if (!rex_deleteQRDir($file.DIRECTORY_SEPARATOR.$filename, $delete_folders))
         {
           $state = FALSE;
         }
@@ -98,6 +84,27 @@ function rex_deleteDir($file, $delete_folders = FALSE)
   }
 
   return TRUE;
+}
+}
+
+if(!function_exists("rex_deleteQRcache"))
+{
+  function rex_deleteQRcache ()
+  {
+    $rdir .= realpath('./../files/addons/rex_qr');
+    //For testing purposes
+    //(echo "<p>Full path to this realdir: " . $rdir . "</p>";
+    return rex_deleteQRDir($rdir,false);
+  }
+}
+
+if(!function_exists("rex_deleteQRfile"))
+{
+  function rex_deleteQRfile ($file)
+  {
+    $rdir .= realpath('./../files/addons/rex_qr');
+    rex_deleteQRDir($rdir.'/'.$file,false);
+  }
 }
 
 ?>
